@@ -1,9 +1,9 @@
 <template>
-	<v-container fluid class="px-0" light>
+	<v-container class="px-0">
 		<v-row no-gutters>
 			<Title />
 		</v-row>
-		<DayDetail :forecast="chosenDay"/>
+		<DayDetail :forecast="chosenDay" v-if="chosenDay"/>
 		<v-row no-gutters justify="center">
 			<DailyForecast v-on:choose-day="chooseDay"/>
 		</v-row>

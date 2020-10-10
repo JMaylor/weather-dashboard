@@ -1,5 +1,5 @@
 <template>
-	<v-slide-group v-model="model" dark show-arrows style="width: 100%">
+	<v-slide-group v-model="model" show-arrows style="width: 100%" active-class="selected-forecast">
 		<Day
 			v-for="(day, i) in days"
 			:key="day.sunrise"
@@ -37,7 +37,4 @@
 </script>
 
 <style scoped>
-.theme--dark .v-card {
-	background: rgba(0, 0, 0, 0.261);
-}
 </style>

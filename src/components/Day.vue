@@ -1,38 +1,26 @@
 <template>
-	<v-slide-item>
-		<v-card width="150" tile @click="$emit('choose-day', forecast)">
+	<v-slide-item v-slot:default="{ toggle }">
+		<v-card width="150" tile @click="$emit('choose-day', forecast); toggle" class="text-center">
 			<v-sheet height="10" color="info"></v-sheet>
-			<v-card-title class="justify-center pb-0 mb-0">{{
+			<v-card-title class="justify-center">{{
 				dayOfWeek
 			}}</v-card-title>
-			<v-card-text class="text-center">
+			<v-card-text>
 				{{ forecast.weather[0].main }}
 			</v-card-text>
 			<v-img
-				:src="
-					`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
-				"
+				:src="require('@/assets/icons/static/' + icon + '.svg')"
 			></v-img>
-			<v-card-text class="text-center">
+			<v-card-text>
 				{{ Math.round(forecast.temp.day) }}&deg;C
 			</v-card-text>
-			<!-- <v-row class="fill-height" align="center" justify="center">
-				<v-scale-transition>
-					{{ dayOfWeek }}
-					<v-icon
-						v-if="active"
-						color="white"
-						size="48"
-						v-text="'mdi-close-circle-outline'"
-					></v-icon>
-				</v-scale-transition>
-			</v-row> -->
 		</v-card>
 	</v-slide-item>
 </template>
 
 <script>
 	import moment from "moment";
+	import icons from '@/utils/icons'
 	export default {
 		data: () => ({
 			icons: {
@@ -52,6 +40,9 @@
 			},
 			description() {
 				return this.$store.getters.getCurrentDescription;
+			},
+			icon() {
+				return icons[this.forecast.weather[0].icon]
 			}
 		}
 	};

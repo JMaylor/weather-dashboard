@@ -1,0 +1,20 @@
+export default {
+	'01d': 'day',
+	'01n': 'night',
+	'02d': 'cloudy-day-1',
+	'02n': 'cloudy-night-1',
+	'03d': 'cloudy',
+	'03n': 'cloudy',
+	'04d': 'cloudy-day-3',
+	'04n': 'cloudy-night-3',
+	'09d': 'rainy-6',
+	'09n': 'rainy-6',
+	'10d': 'rainy-3',
+	'10n': 'rainy-5',
+	'11d': 'thunder',
+	'11n': 'thunder',
+	'13d': 'snowy-2',
+	'13n': 'snowy-5',
+	'50d': 'cloudy',
+	'50n': 'cloudy'
+}

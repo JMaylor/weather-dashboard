@@ -7,6 +7,9 @@
 		<v-row no-gutters justify="center">
 			<DailyForecast v-on:choose-day="chooseDay"/>
 		</v-row>
+		<v-row>
+			<HourlyForecast />
+		</v-row>
 		
 	</v-container>
 </template>
@@ -15,6 +18,7 @@
 	import Title from "@/components/Title";
 	import DayDetail from "@/components/DayDetail";
 	import DailyForecast from "@/components/DailyForecast";
+	import HourlyForecast from "@/components/HourlyForecast"
 	
 	export default {
 		data() {
@@ -25,7 +29,8 @@
 		components: {
 			Title,
 			DayDetail,
-			DailyForecast
+			DailyForecast,
+			HourlyForecast
 		},
 		methods: {
 			chooseDay(day) {
